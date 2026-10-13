@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameMarket - Oyun Pazarı</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d18;color:#fff;font-family:Arial,sans-serif}
+header{padding:20px 6%;background:#101827;border-bottom:1px solid #24334b;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:25px;font-weight:bold;color:#39a9ff}
+.logo span{color:white}
+header a{color:#ddd;text-decoration:none;margin-left:15px}
+.hero{text-align:center;padding:65px 20px 45px;background:linear-gradient(135deg,#101e37,#080d18)}
+.hero h1{font-size:clamp(30px,6vw,48px);margin:0 0 15px}
+.hero h1 span{color:#39a9ff}
+.hero p{color:#aab6ca;font-size:16px;line-height:1.6}
+.search{width:min(500px,100%);padding:15px;border-radius:10px;border:1px solid #344761;background:#101827;color:white;margin-top:18px;font-size:16px}
+main{max-width:1100px;margin:auto;padding:30px 18px}
+h2{margin-top:15px}
+.categories{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 30px}
+.categories button{background:#121e30;color:#cbd5e1;border:1px solid #2b3c54;padding:11px 15px;border-radius:20px;cursor:pointer}
+.categories button.active,.categories button:hover{background:#1685e5;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#111b2b;border:1px solid #24344b;border-radius:14px;overflow:hidden}
+.cover{height:115px;display:flex;align-items:center;justify-content:center;font-size:38px;background:linear-gradient(135deg,#123c69,#176cb5)}
+.card:nth-child(2) .cover{background:linear-gradient(135deg,#52250c,#c15b18)}
+.card:nth-child(3) .cover{background:linear-gradient(135deg,#3d246c,#8652cf)}
+.card:nth-child(4) .cover{background:linear-gradient(135deg,#173f39,#268b75)}
+.info{padding:16px}
+.tag{font-size:12px;color:#54b4ff}
+.info h3{margin:10px 0}
+.info p{color:#aab6ca;font-size:14px}
+.price{font-size:21px;font-weight:bold;margin:15px 0;color:#58bdff}
+.view{width:100%;padding:12px;border:0;border-radius:8px;background:#1685e5;color:white;font-weight:bold;cursor:pointer}
+.view:hover{background:#0869bd}
+.notice{color:#8797ad;text-align:center;font-size:12px;margin-top:30px;line-height:1.6}
+footer{text-align:center;padding:25px;background:#101827;color:#8b9bb1;margin-top:35px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">GAME<span>MARKET</span></div>
+<nav><a href="#ilanlar">İlanlar</a><a href="#kategoriler">Kategoriler</a></nav>
+</header>
+<section class="hero">
+<h1>Oyun Hesabını Bul, <span>Oyuna Başla!</span></h1>
+<p>PUBG Mobile, Free Fire, Roblox ve daha fazlası.<br>Oyun dünyasının pazarı burada!</p>
+<input class="search" id="search" placeholder="İlan veya oyun ara...">
+</section>
+<main>
+<h2 id="kategoriler">🎮 Oyun Kategorileri</h2>
+<div class="categories">
+<button class="active" data-cat="Tümü">Tümü</button>
+<button data-cat="PUBG Mobile">PUBG Mobile</button>
+<button data-cat="Free Fire">Free Fire</button>
+<button data-cat="Roblox">Roblox</button>
+<button data-cat="Valorant">Valorant</button>
+<button data-cat="Mobile Legends">Mobile Legends</button>
+</div>
+<h2 id="ilanlar">🔥 Öne Çıkan İlanlar</h2>
+<div class="grid" id="grid">
+<article class="card" data-cat="PUBG Mobile">
+<div class="cover">🎯</div><div class="info">
+<span class="tag">PUBG MOBILE</span><h3>Gelişmiş PUBG Hesabı</h3>
+<p>Örnek ilan • Detaylar satıcıdan öğrenilir.</p>
+<div class="price">2.500 TL</div>
+<button class="view" data-name="Gelişmiş PUBG Hesabı">İlanı İncele</button>
+</div></article>
+<article class="card" data-cat="Free Fire">
+<div class="cover">🔥</div><div class="info">
+<span class="tag">FREE FIRE</span><h3>Free Fire Hesabı</h3>
+<p>Örnek ilan • Detaylar satıcıdan öğrenilir.</p>
+<div class="price">850 TL</div>
+<button class="view" data-name="Free Fire Hesabı">İlanı İncele</button>
+</div></article>
+<article class="card" data-cat="Roblox">
+<div class="cover">🧱</div><div class="info">
+<span class="tag">ROBLOX</span><h3>Roblox Hesabı</h3>
+<p>Örnek ilan • Detaylar satıcıdan öğrenilir.</p>
+<div class="price">500 TL</div>
+<button class="view" data-name="Roblox Hesabı">İlanı İncele</button>
+</div></article>
+<article class="card" data-cat="Valorant">
+<div class="cover">⚔️</div><div class="info">
+<span class="tag">VALORANT</span><h3>Valorant Hesabı</h3>
+<p>Örnek ilan • Detaylar satıcıdan öğrenilir.</p>
+<div class="price">1.200 TL</div>
+<button class="view" data-name="Valorant Hesabı">İlanı İncele</button>
+</div></article>
+<article class="card" data-cat="Mobile Legends">
+<div class="cover">🛡️</div><div class="info">
+<span class="tag">MOBILE LEGENDS</span><h3>Mobile Legends Hesabı</h3>
+<p>Örnek ilan • Detaylar satıcıdan öğrenilir.</p>
+<div class="price">650 TL</div>
+<button class="view" data-name="Mobile Legends Hesabı">İlanı İncele</button>
+</div></article>
+</div>
+<p class="notice">Bu ilanlar tasarım örneğidir; gerçek satış ilanı değildir. Bu demo henüz ödeme, hesap doğrulama veya güvenli alışveriş hizmeti sunmaz.</p>
+</main>
+<footer>© 2026 GameMarket • Oyun pazarına hoş geldin!</footer>
+<script>
+const buttons=document.querySelectorAll('.categories button');
+const cards=document.querySelectorAll('.card');
+const search=document.getElementById('search');
+let category='Tümü';
+function filter(){
+const q=search.value.toLocaleLowerCase('tr');
+cards.forEach(card=>{
+const matchCat=category==='Tümü'||card.dataset.cat===category;
+const matchText=card.innerText.toLocaleLowerCase('tr').includes(q);
+card.style.display=matchCat&&matchText?'':'none';
+});
+}
+buttons.forEach(button=>button.addEventListener('click',()=>{
+buttons.forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+category=button.dataset.cat;
+filter();
+}));
+search.addEventListener('input',filter);
+document.querySelectorAll('.view').forEach(button=>button.addEventListener('click',()=>{
+alert(button.dataset.name+'\\n\\nBu bir demo ilandır. Gerçek ilan sistemi henüz kurulmadı.');
+}));
+</script>
+</body>
+</html>
